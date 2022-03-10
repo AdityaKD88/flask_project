@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Expense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1><b>Healthcare Expense Prediction</b></h1>
+    <form action="{{ url_for('predict')}}" method="post">
+        <div class="form-wrapper">
+            <label for='age'>Age: </label>
+            <input type="text" name="age", id="age">
+            <br>
+        </div>
+        <div class="form-wrapper">
+            <label for="bmi">BMI: </label>
+            <input type="text" name="bmi", id="bmi">
+            <br>
+        </div>
+        <div class="form-wrapper">
+            <label for='sex'>Sex: </label>
+            <select id="sex" name="sex">
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+            </select>
+            <br>
+        </div>
+        <div class="form-wrapper">
+            <label for='smoke'>Smoker: </label>
+            <select id="smoke" name="smoke">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <br>
+        </div>
+        <div class="form-wrapper">
+        <label for="children">Children: </label>
+            <select id="children" name="children">
+                <option value="0">Not Applicable</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 & above</option>
+            </select>
+            <br>
+        </div>
+        <div class="form-wrapper">
+            <label for="region">Region: </label>
+                <select id="region" name="region">
+                    <option value="0">Northeast</option>
+                    <option value="1">Norhwest</option>
+                    <option value="2">Southeast</option>
+                    <option value="3">Southwest</option>
+                </select>
+                <br>
+            </div>
+        <button>Predict Medical Charges</button>
+    </form>
+    <br>
+    <div>
+        <h2>{{prediction_text}}</h2>
+    </div>
+</body>
+</html>
