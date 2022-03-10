@@ -21,6 +21,6 @@ def predict():
         userinp = [[age, bmi, children, sex, smoker, Region]]
         prediction = model.predict(userinp)
         output = round(prediction[0], 2)
-        return render_template("start.html", prediction_text='Your predicted annual Healthcare Expense is $ {}'.format(output))
+        return render_template("start.html", prediction_text='Your predicted annual Healthcare Expense is ₹ {}'.format(output))
 if __name__ == "__main__":
     app.run(debug=True)
