@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Health Expenses</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends 'base.html' %}
+{% block body %}
+
+
     <h1><b>Healthcare Expense Prediction</b></h1>
     <form action="{{ url_for('predict')}}" method="post">
         <div class="form-wrapper">
@@ -58,11 +52,17 @@
                 </select>
                 <br>
             </div>
-        <button>Predict Medical Charges</button>
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <button>Predict Medical Charges</button>
+            </a>
     </form>
     <br>
     <div>
         <h2>{{prediction_text}}</h2>
     </div>
-</body>
-</html>
+
+{% endblock %}
